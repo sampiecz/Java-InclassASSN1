@@ -24,9 +24,10 @@ public class PayableInterfaceTest
       {
          if (currentPayable.equals(payableObjects[5]))
          {
-            double newBaseSalary = currentPayable.getBaseSalary() * 1.1;
+			BasePlusCommissionEmployee payable =
+				(BasePlusCommissionEmployee) currentPayable;
 
-            currentPayable.setBaseSalary(newBaseSalary);
+			payable.setBaseSalary(1.10 * payable.getBaseSalary());
 
             System.out.printf("%n%s %n%s: $%,.2f%n", 
             currentPayable.toString(), // could invoke implicitly
